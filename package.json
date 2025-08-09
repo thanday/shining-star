@@ -1,0 +1,15 @@
+{
+    "name": "shining-star-portal",
+    "version": "1.0.0",
+    "description": "Upload portal for Shining Star singing competition",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "NODE_ENV=development node server.js"
+    },
+    "dependencies": {
+        "dotenv": "^16.4.7",
+        "express": "^4.19.2",
+        "multer": "^1.4.5-lts.1"
+    }
+}

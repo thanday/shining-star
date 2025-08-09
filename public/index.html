@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shining Star — Audition Upload</title>
+  <meta name="description" content="You may be the next Shining Star. Upload your audition video here." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <!-- Animated aurora background -->
+  <div class="aurora">
+    <div class="aurora__layer"></div>
+    <div class="aurora__layer"></div>
+    <div class="aurora__layer"></div>
+    <div class="aurora__stars"></div>
+  </div>
+
+  <main class="shell">
+    <header class="hero">
+        <h1 class="brand">
+            <img src="/assets/logo.png" alt="Shining Star" class="logo" />
+          </h1>
+      <p class="tag">You may be the next <span>Shining Star.</span></p>
+    </header>
+
+    <section class="card" role="region" aria-labelledby="formTitle">
+      <h2 id="formTitle">Send Your Audition</h2>
+      <p class="muted">No login needed. Fill the details and upload your video (MP4 or MOV).</p>
+
+      <form id="uploadForm" class="form" enctype="multipart/form-data">
+        <div class="row">
+          <label>
+            <span>Full Name</span>
+            <input type="text" name="name" placeholder="Your name" required maxlength="80" />
+          </label>
+          <label>
+            <span>Age</span>
+            <input type="number" name="age" placeholder="10" min="3" max="18" required />
+          </label>
+        </div>
+        <div class="row">
+            <label class="full">
+                <span>Phone Number</span>
+                <input type="text" name="mobile" placeholder="e.g., 7777777" 
+                       required pattern="[79][0-9]{6}"
+                       title="Please enter a valid Maldives mobile number" />
+              </label>
+        </div>
+        <div class="row">
+          <label class="full file">
+            <span>Audition Video (MP4/MOV, up to 2GB)</span>
+            <input type="file" name="video" id="video" accept="video/mp4,video/quicktime" required />
+          </label>
+        </div>
+
+        <div class="progress" aria-hidden="true">
+          <div class="progress__bar" id="progressBar"></div>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+
+        <button type="submit" class="btn btn-primary">
+          <span class="btn__glow"></span>
+          Submit Audition
+        </button>
+      </form>
+    </section>
+
+    <footer class="foot">
+      <small>© <span id="year"></span> Shining Star. All rights reserved.</small>
+    </footer>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
